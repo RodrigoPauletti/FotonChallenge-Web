@@ -1,0 +1,23 @@
+.new-task-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.new-task-container .new-task-header {
+  margin-bottom: 20px;
+}
+
+.new-task-container strong {
+  margin-top: 5px;
+}
+
+.new-task-container input {
+  height: 67px;
+  margin-top: 26px;
+}
+
+.new-task-container textarea {
+  height: 238px;
+  resize: none;
+}

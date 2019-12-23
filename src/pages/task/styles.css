@@ -1,0 +1,29 @@
+.task-container {
+  background: linear-gradient(91.53deg, #1EB36B 0.35%, rgba(30, 179, 107, 0.85) 100%);
+  padding: 25px 22px 25px 17px;
+  max-width: 700px;
+  margin: 20px auto 0;
+  border-radius: 5px;
+}
+
+.task-container .task-link {
+  font-family: 'SF Pro Text';
+  color: #FFF;
+  text-decoration: none;
+}
+
+.task-container .loading-task-info {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: #FFF;
+  margin-top: 20px;
+}
+
+.task-container .task-info {
+  margin-top: 20px;
+}
+
+.task-container .task-info p {
+  margin-top: 47px;
+}
