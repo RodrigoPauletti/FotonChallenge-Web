@@ -1,3 +1,8 @@
+This project was based on FotonChallenge (just to practice):
+[Foton Challenge](https://github.com/FotonTech/join)
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
