@@ -6,8 +6,6 @@ import api from "../../services/api";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import registerImage from "../../assets/register.svg";
-
 class Register extends Component {
   state = {
     name: "",
