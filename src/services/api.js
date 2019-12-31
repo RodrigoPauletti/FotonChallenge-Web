@@ -1,5 +1,8 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const api = axios.create({
   baseURL: process.env.API_URL
