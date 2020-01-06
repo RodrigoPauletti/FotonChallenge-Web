@@ -23,6 +23,8 @@ api.interceptors.request.use(config => {
       console.log("invalid token | prevent request");
       return redirectToLogin();
     }
+    const tkn = `Bearer ${token}`;
+    config.headers.Authorization = tkn;
   } else {
     if (!config.data || !config.data.withoutToken) {
       console.log("without token | prevent request");
@@ -30,9 +32,6 @@ api.interceptors.request.use(config => {
     }
   }
   console.log("continuing...");
-
-  const tkn = `Bearer ${token}`;
-  config.headers.Authorization = tkn;
 
   return config;
 });
