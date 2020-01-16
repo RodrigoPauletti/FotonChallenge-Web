@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { toast } from "react-toastify";
 import api from "../../services/api";
 
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +34,6 @@ class Register extends Component {
     await api
       .post("/users", { name, email, password, withoutToken: true })
       .then(async () => {
-        toast.success("Account created!");
         await api
           .post("/sessions", { email, password, withoutToken: true })
           .then(({ data: { token } }) => {

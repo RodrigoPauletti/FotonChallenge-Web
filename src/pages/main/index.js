@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroller";
 import jwtDecode from "jwt-decode";
 
@@ -132,19 +132,13 @@ class Main extends Component {
 
   deleteTask = async (e, task_id) => {
     e.preventDefault();
-    console.log("deleting");
+    this.setState({ loadingTasks: true });
 
     await api
       .delete(`/tasks/${task_id}`)
       .then(() => {
         toast.success("Task deleted!");
-        // const { tasks } = this.state;
-        // const tasksSelectedIndex = tasks.findIndex(task => {
-        //   return task._id === task_id;
-        // });
-        // tasks.splice(tasksSelectedIndex, 1);
         this.loadTasks(1, "", false, true);
-        // this.setState({ tasks });
       })
       .catch(err => {
         let error = "";
@@ -179,7 +173,6 @@ class Main extends Component {
       } else {
         return (
           <div className="task-list-container">
-            <ToastContainer />
             <div className="task-list-header">
               <h1 className="title">Hello, {name}</h1>
               <strong className="subtitle">
@@ -258,7 +251,7 @@ class Main extends Component {
                             )}
                           </div>
                           <button
-                            className="delete-task"
+                            className="delete-task link white"
                             onClick={e => this.deleteTask(e, task._id)}
                           >
                             <FontAwesomeIcon

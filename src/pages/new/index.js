@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { toast } from "react-toastify";
 import api from "../../services/api";
 
 import {
@@ -46,7 +45,6 @@ class New extends Component {
       .post(`/tasks`, { title, description })
       .then(() => {
         this.setState({ created: true, error: "" });
-        toast.success("Task created!");
       })
       .catch(err => {
         let error = "";

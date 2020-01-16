@@ -1,4 +1,5 @@
 .task-list-container {
+  width: 100%;
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
@@ -39,6 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .task-list-container .task-list .task-link {
@@ -60,15 +62,17 @@
   box-shadow: 0px 8px 34px rgba(142, 142, 142, 0.49);
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 15px 35px 15px 15px;
+  padding: 15px;
   filter: drop-shadow(0 8px 34px rgba(142, 142, 142, 0.49));
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .task-list-container .task-list .task-link article .task-info {
   flex: 1;
-  width: 100%;
+  width: calc(100% - 22px);
+  max-width: 100%;
   padding-right: 15px;
 }
 
@@ -87,15 +91,9 @@
 .task-list-container .task-list .task-link .delete-task {
   border: 0;
   background: transparent;
-  color: #FFF;
   font-size: 25px;
   outline: none;
   transition: all 0.2s;
-}
-
-.task-list-container .task-list .task-link .delete-task:hover {
-  cursor: pointer;
-  color: #33334F;
 }
 
 .new-task {
@@ -126,4 +124,14 @@
 .new-task.new-task-link:hover {
   opacity: .7;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .task-list-container .no-results .task-tip {
+    flex-direction: column;
+  }
+
+  .new-task.new-task-tip {
+    margin: 10px;
+  }
 }

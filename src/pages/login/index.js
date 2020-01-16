@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import api from "../../services/api";
-import { toast, ToastContainer } from "react-toastify";
 
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,7 +60,6 @@ class Login extends Component {
       .then(({ data: { token } }) => {
         localStorage.setItem("token", token);
         this.setState({ error: "", logged: true });
-        toast.success("Successfully login");
         return;
       })
       .catch(err => {
@@ -71,7 +69,6 @@ class Login extends Component {
         } else {
           error = "Network error";
         }
-        toast.error(error);
         this.setState({ loading: false, error });
       });
   };
@@ -168,7 +165,7 @@ class Login extends Component {
               ""
             )}
 
-            {error ? <ToastContainer /> : ""}
+            {error ? <p className="error-message small">{error}</p> : ""}
 
             <div className="small-text">
               <p>

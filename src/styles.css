@@ -116,6 +116,7 @@ textarea:disabled {
   font-family: 'SF Pro Text';
   color: #33334F;
   text-decoration: none;
+  transition: all .2s;
 }
 
 .link.white {
@@ -124,6 +125,17 @@ textarea:disabled {
 
 .link.green {
   color: #1EB36B;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #1EB36B;
+}
+
+.link.white:hover,
+.link.green:hover {
+  cursor: pointer;
+  color: #33334F;
 }
 
 .error-message {
@@ -138,10 +150,11 @@ textarea:disabled {
 /* Form - BEGIN */
 .login-container,
 .register-container {
-  width: 700px;
+  max-width: 700px;
   margin: 37px auto 0;
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
 }
 
 .login-image,
